@@ -514,13 +514,13 @@ int main(void)
   	HAL_ADC_Stop(&hadc1);
  80005f8:	4810      	ldr	r0, [pc, #64]	; (800063c <main+0x88>)
  80005fa:	f000 fd9b 	bl	8001134 <HAL_ADC_Stop>
-  	uint16_t servoValue = map(result,0,4095,600,2400);
+  	uint16_t servoValue = map(result,4095,0,600,2400);
  80005fe:	88f8      	ldrh	r0, [r7, #6]
  8000600:	f44f 6316 	mov.w	r3, #2400	; 0x960
  8000604:	9300      	str	r3, [sp, #0]
  8000606:	f44f 7316 	mov.w	r3, #600	; 0x258
- 800060a:	f640 72ff 	movw	r2, #4095	; 0xfff
- 800060e:	2100      	movs	r1, #0
+ 800060a:	2200      	movs	r2, #0
+ 800060c:	f640 71ff 	movw	r1, #4095	; 0xfff
  8000610:	f7ff ffb4 	bl	800057c <map>
  8000614:	4603      	mov	r3, r0
  8000616:	80bb      	strh	r3, [r7, #4]
